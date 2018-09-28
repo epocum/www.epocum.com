@@ -1,0 +1,259 @@
+﻿<html>
+
+<head>
+	<title>Epocum - Explorer</title>
+	
+	<link rel="stylesheet" type="text/css" href="./css/Explorer/global.css">
+	<link rel="stylesheet" type="text/css" href="./css/Explorer/homepage.css">
+	<link rel="stylesheet" type="text/css" href="./css/Explorer/flex-layout-attribute.css">
+
+
+	<script type='text/javascript' src='./js/Explorer/jquery-2.1.0.min.js'></script>
+	<script type='text/javascript' src='./js/Explorer/global.js'></script>
+	<script type='text/javascript' src='./js/Explorer/homepage.js'></script>
+	<script type='text/javascript' src="./js/Explorer/jquery.mixitup.min.js"></script>
+	<style type="text/css">
+	
+	
+#preloader {
+    overflow: hidden;
+    background-color: #fff;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999999;
+}
+
+.colorlib-load {
+    -webkit-animation: 2000ms linear 0s normal none infinite running colorlib-load;
+    animation: 2000ms linear 0s normal none infinite running colorlib-load;
+    background: transparent none repeat scroll 0 0;
+    border-color: #dddddd #dddddd #fb397d;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 2px;
+    height: 40px;
+    left: calc(50% - 20px);
+    position: relative;
+    top: calc(50% - 20px);
+    width: 40px;
+    z-index: 9;
+}
+
+@-webkit-keyframes colorlib-load {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes colorlib-load {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+    .overlay{
+          position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 100; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+    
+    }
+
+</style>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />	
+	<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1562273534075845&amp;ev=PageView&amp;noscript=1"/></noscript>
+</head>
+<body>
+
+
+
+
+
+
+<div id="nav" layout="row top-left">
+	<div self="left">
+		<a href="/"><div class="logo logo-isNotVisIfMobile" style="color: white">Explorer</div></a>
+		<a href="/"><div class="logo logo-isVisIfMobile"></div></a>
+	</div>
+	<div class="nav-isNotVisIfMobile">
+		<div class="item">
+			<a href="/new"><i class="fa fa-plus"  style="margin-top:18px; font-size:medium"></i></a>
+		</div>
+		<div class="item">
+			<a href="/profile"><img id="myImage" alt="" style="border-radius: 30%; width:40px; height:40px; margin-top:5px;" src="./img/team-img/user.png"></a>
+		</div>
+
+	</div>
+	<div class="nav-isVisIfMobile">
+		<div class="item">
+			<a href="/new"><i class="fa fa-plus" style="margin-top:18px; font-size:medium" ></i></a>
+		</div>
+		<div class="item">
+			<a href="/profile"><img id="myImage1" alt="" style="border-radius: 30%; width:40px; height:40px;margin-top:5px;" src="./img/team-img/user.png"></a>
+		</div>
+
+	</div>
+</div>
+	<div id="content">  <div class="container container--header">
+		<h1 class="h1--home-title">You're looking for something to advertise?</h1>
+		<h3>Start advertise by yourself, share a link of your interest and start earning or create your own campaign setting a digital currency payments.</h3>
+  </div>
+  <div class="container--grid home-container">
+  <ul layout="rows top-left">
+  
+     <!-- <li class="mix"><a href="/source">
+			<div class="card card--article not-visible" >
+				<div class="card-body"><div class="card-circle card-circle--article" style="background-image: url('./img/team-img/team-1.png')"></div>
+					<div class="card-title">Make your advertising campaign by yourself</div>
+					<div class="card-description card-description--clamp-3">Let's start using epocum. Share this link to earn by visits.</div>
+				</div>
+				<div class="card-hero">
+					<div class="card-image" style="background-image: url(./img/bg-img/epocumindex.png);">
+					</div>
+				</div>
+			<div class="card-footer">
+				<div class="card-footer-wrapper" layout="row bottom-left">
+				
+				 <div class="card-type is-notShownIfHover">0.05 ETH</div> 
+				 <div class="card-type is-notShownIfHover"><strong>100 Visits</strong></div>
+				 <div class="card-link is-notShownIfHover">Accept</div>
+
+				
+				<div class="card-tag is-shownIfHover">Read Margaret Gould Stewart's article</div>
+				<div class="is-shownIfHover" self="right"></div>
+				
+				
+				
+				
+				</div>
+			</div>
+		</div>
+
+		
+		</a></li>
+      -->
+	
+      
+    </ul>
+  </div></div><div id="footer" layout="rows center-left">
+	<div id="end-mark">
+		<!-- <div class="end-mark-icon"></div> -->
+		<p class="copyright">Epocum &copy; 2018</p>
+	</div>
+	
+</div>
+
+    <div id="lock" class="overlay" style="display:none">
+    </div>
+
+
+    	        <!-- web3 -->
+    <script type="text/javascript" src="./js/ethereum/bignumber.min.js"></script>
+	<script type="text/javascript" src="./js/ethereum/web3-light.min.js"></script>
+	<script type="text/javascript" src="./js/ethereum/ethereumjs-tx.js"></script>
+	<script type="text/javascript" src="./js/ethereum/keythereum.js"></script>
+
+    <script src="./js/lightwallet.min.js"></script>
+	<script src="./js/cookies.js"></script>
+	<script src="./js/aes.js"></script>
+	<script src="./js/epocum.light.js"></script>
+
+<script>
+var local = readCookie('epocumJsonENC');
+
+if (local == null) {
+	location.replace("/profile");
+}
+
+function overlay() {
+	document.getElementById('lock').style.display = 'block';
+}
+
+	var id = "<%= id %>";
+	var name = "<%= name %>";
+	var img = "<%= img %>";
+
+
+		if (name != '') {
+
+	try {
+		document.getElementById('myName').innerHTML = name;
+	    } catch(e){
+        
+       	console.log(e);
+        
+    }
+}
+    		if (name != '') {
+
+	try {
+
+		document.getElementById('Name').value = name;
+		    } catch(e){
+        
+       	console.log(e);
+        
+    }
+}
+
+if (img != 'null') {
+
+	try {
+
+		document.getElementById('myImage1').src = img;
+		    } catch(e){
+        
+       	console.log(e);
+        
+    }
+}else {
+
+    document.getElementById('myImage1').src = '//graph.facebook.com/'+id+'/picture?type=large';
+
+}
+
+if (img != 'null') {
+
+	try {
+
+		document.getElementById('myImage').src = img;
+		    } catch(e){
+        
+       	console.log(e);
+        
+    }
+}else {
+
+    document.getElementById('myImage').src = '//graph.facebook.com/'+id+'/picture?type=large';
+
+}
+</script>
+
+</body>
+
+</html>

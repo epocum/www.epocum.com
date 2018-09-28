@@ -1,0 +1,577 @@
+﻿<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Webpixels">
+    <title>Epocum - Decentralized referral link</title>
+    <!-- Favicon -->
+    <link href="./img/favicon.png" rel="icon" type="image/png">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800" rel="stylesheet">
+    <!-- Theme CSS -->
+    <link type="text/css" href="./css/theme.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <style type="text/css">
+    
+    #preloader {
+    overflow: hidden;
+    background-color: #fff;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999999;
+}
+
+.colorlib-load {
+    -webkit-animation: 18000ms linear 0s normal none infinite running colorlib-load;
+    animation: 18000ms linear 0s normal none infinite running colorlib-load;
+    background: transparent none repeat scroll 0 0;
+    border-color: #dddddd #dddddd #fb397d;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 2px;
+    height: 40px;
+    left: calc(50% - 20px);
+    position: relative;
+    top: calc(50% - 20px);
+    width: 40px;
+    z-index: 9;
+}
+
+@-webkit-keyframes colorlib-load {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes colorlib-load {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+    .overlay{
+          position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 100; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+    
+    }
+
+</style>
+</head>
+
+<body>
+    <header>
+        
+    </header>
+    
+       <div id="preloader">
+        <div class="colorlib-load"></div>
+    </div>
+    
+    <main>
+        <section class="slice">
+            <div class="container">
+                <div class="row row-grid">
+                    <div class="col-lg-4">
+                        <div class="card card-profile  text-center">
+                            <div class="card-profile-cover">
+                                <img alt="Image" class="card-img-top">
+                            </div>
+                            <div class="card-body">
+                                <a href="#">
+                                    <img id="myImage" src="./img/team-img/user.png"  style="border-radius: 30%;" class="avatar shadow">
+                                </a>
+                                <div class="my-4">
+                                    <div class="mb-3">
+                                        <h5 class="mb-0" id="myName"></h5>
+                                       <!--  <span class="text-muted">Angular JS Developer</span> -->
+                                    </div>
+                                    
+                                    <span class="col-md-2"><i class="fab fa-ethereum" style=" font-size:25px; color:black; margin-left:15px;"></i></span>
+                                    <span class="col-md-2"></span>
+                                    <span class="col-md-2"><img alt="" src="./img/core-img/epm.svg" style="width:30px; margin-left:10px;"></span>
+                                    <div style="margin-top:7px;"></div>
+                                    <span class="col-md-2"><label id="eth" style="margin-left:-15px; font-size:13px;">0</label></span>
+                                    <span class="col-md-2"></span>
+                                    <span class="col-md-2"><label id="epm" style="padding-right:-15px;font-size:13px;">0</label></span>
+                                    <div style="margin-top:7px;"></div>
+ 
+                                </div>
+                                <div>
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="page-header mb-4">
+                            <div class="row align-items-center">
+                                <div class="col-md-6 mb-3 mb-md-0">
+                                    <a href="/explorer" class="h5 mb-0"><i class="fas fa-angle-left mr-3"></i>Settings</a>
+                                </div>
+                                <div class="col-md-6 text-md-right">
+                                    <div class="row align-items-center">
+                                        <div class="col text-right">
+                                            <h6 class="mb-0">80% completed</h6>
+                                        </div>
+                                        <div class="col-7">
+                                            <div class="progress-group p-0">
+                                                <span class="progress-prepend-icon">
+                            <i class="fas fa-meh text-primary"></i>
+                          </span>
+                                                <div class="progress mb-0" style="height: 5px;">
+                                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mb-4">
+                            <div class="card-body py-3">
+                                <div class="row row-grid align-items-center">
+                                    <div class="col-sm-8">
+                                        <div class="media align-items-center">
+                                            <img src="./img/team-img/user.png" id="myImage1" style="border-radius: 30%; width:50px; height:50px; ">
+                                            <div class="media-body">
+                                                <h5 class="font-weight-300 mb-0"></h5>
+                                                <a href="#" class="font-weight-700">Change</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 mt-4 mt-sm-0 text-sm-right">
+                                        <a href="#" class="btn btn-sm btn-primary btn-circle btn-icon shadow">
+                                            <span class="btn-inner--icon"><i class="fas fa-user-tie"></i></span>
+                                            <span class="btn-inner--text open">Setup line's code</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-5">
+                            <div class="page-inner-header mb-4">
+                                <h5 class="mb-1">General</h5>
+                                <p class="text-muted mb-0"> </p>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label class="sr-only">First name</label>
+                                        <input class="form-control" id="Name" type="text" placeholder="First name">
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        <label class="sr-only">Email</label>
+                                        <input class="form-control" id="Email" type="email" placeholder="name@example.com">
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="page-inner-header mb-4">
+                                <h5 class="mb-1">Wallet</h5>
+                            </div>
+
+                            <div class="row align-items-center">
+                                <div class="col-md-7">
+                                    <div class="form-group">
+                                        <label href="#" class="form-text text-darker mt-2">Address</label>
+                                        <input class="form-control" id="walletAddress" type="text" value="" placeholder="0x..." readonly>
+                                    </div>
+                                </div>
+                                
+                                
+                                
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <button id="backupBTN" class="btn btn-sm btn-primary btn-block" disabled="disabled"  style="margin-top:10px; background-color:#510fa878" data-toggle="modal" data-target="#backupWallet">Backup keys</button>
+
+                                        <button id="importBTN" class="btn btn-sm btn-primary btn-block" disabled="disabled"  style="margin-top:10px; background-color:#510fa878" data-toggle="modal" data-target="#importMnemonic">Import</button>
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="mb-4">
+                                <h5 class="mb-1">Website</h5>
+                                <p class="text-muted mb-0">In order to became a node you need to have an active website, apply here the website address and copy paste the Setup line in your host, <strong>read all here</strong>, for detailed istructions.</p>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label class="sr-only">Address</label>
+                                        <input class="form-control" type="text" placeholder="https://www.yourwebsite.some">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                        
+                        
+                        <div class="mb-4" id="firstActivationPassword" style="display:none">
+                            <div class="mb-4">
+                                <h5 class="mb-1" style="color:#FF4242">Password</h5>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label class="sr-only">Local</label>
+                                        <input id="localPassword" required class="form-control" type="password">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+
+
+                        <div>
+                            <button type="button" onclick="validation();" class="btn btn-sm btn-primary">Done</button>
+                            <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#destroyModal">Destroy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Call to action -->
+        
+
+    </main>
+   
+
+<div id="importMnemonic"class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="info" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title text-center" id="myModalLabel">Regenerate a wallet</h4>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <form class="form-horizontal form-material">
+                                                                    <div class="form-group">
+																			<p>Type mnemonic and password below please</p>
+
+                                                                            <div class="col-md-12">
+                                                                            <input id="seedRegen" type="text" class="form-control" placeholder="Insert mnemonic here">
+
+
+                                                                            </div>
+                                                                            
+
+                                                                            <div class="col-md-12" style="margin-top:10px;">
+                                                                            <input id="passwordRegen" type="password" class="form-control">
+
+
+                                                                            </div>
+                                                                            
+
+                                                                        <div class="col-md-12 m-b-20" style="margin-top:10px;" align="center">
+                                                                           
+																				
+                                                                            <button type="button"  style="background-color: black; border-color:black"  onclick="regenerate();" class="btn btn-info waves-effect" data-dismiss="modal">Import</button>                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                        <!-- /.modal-content -->
+                                                    </div>
+                                                    <!-- /.modal-dialog -->
+                                                </div>
+
+
+
+<div id="backupWallet"class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="info" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title text-center" id="myModalLabel">Backup Wallet Keys</h4>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <form class="form-horizontal form-material">
+                                                                    <div class="form-group">
+																			<p>Type local password below please</p>
+
+                                                                            <div class="col-md-12">
+                                                                            <input id="localPass" type="password" class="form-control">
+
+
+                                                                            </div>
+                                                                            
+
+                                                                        <div class="col-md-12 m-b-20" style="margin-top:10px;" align="center">
+                                                                           
+																				
+                                                                            <button type="button"  style="background-color: black; border-color:black;"  onclick="dwn();" class="btn btn-info waves-effect" data-dismiss="modal">Download</button>                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                        <!-- /.modal-content -->
+                                                    </div>
+                                                    <!-- /.modal-dialog -->
+                                                </div>
+
+
+<div id="destroyModal"class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="info" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title" id="myModalLabel">Destroy local data</h4>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <form class="form-horizontal form-material">
+                                                                    <div class="form-group">
+
+
+
+                                                                        <div class="col-md-12 m-b-20" style="margin-top:10px;" align="center">
+                                                                           
+																				
+                                                                            <button type="button"   onclick="destroyLocal();" class="btn btn-danger waves-effect" data-dismiss="modal">Destroy</button>                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                        <!-- /.modal-content -->
+                                                    </div>
+                                                    <!-- /.modal-dialog -->
+                                                </div>
+
+
+    <div id="lock" class="overlay" style="display:none">
+    </div>
+
+
+    <!-- Jquery-2.2.4 JS -->
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap-4 Beta JS -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- All Plugins JS -->
+    <script src="js/plugins.js"></script>
+    <!-- Slick Slider Js-->
+    <script src="js/slick.min.js"></script>
+    <!-- Active JS -->
+    <script src="js/active.js"></script>
+    	        <!-- web3 -->
+    <script type="text/javascript" src="./js/ethereum/bignumber.min.js"></script>
+	<script type="text/javascript" src="./js/ethereum/web3-light.min.js"></script>
+	<script type="text/javascript" src="./js/ethereum/ethereumjs-tx.js"></script>
+	<script type="text/javascript" src="./js/ethereum/keythereum.js"></script>
+
+    <script src="./js/lightwallet.min.js"></script>
+	<script src="./js/cookies.js"></script>
+	<script src="./js/aes.js"></script>
+	<script src="./js/epocum.light.js"></script>
+	<script>
+	
+function overlay() {
+	document.getElementById('lock').style.display = 'block';
+}
+
+var local = readCookie('epocumJsonENC');
+console.log(local);
+
+if (local !== null) {
+
+	getLocalWallet();
+	getBalance();
+	document.getElementById("backupBTN").disabled = false;
+	document.getElementById("importBTN").disabled = false;
+
+}else {
+
+	createWallet();
+	document.getElementById('firstActivationPassword').style.display = 'inline';
+}
+
+setInterval(function(){ getBalance(); }, 30000);
+	
+	
+	var id = "<%= id %>";
+	var name = "<%= name %>";
+	var img = "<%= img %>";
+	var email = "<%= email %>";
+	var imgLarge = "<%= imgLarge %>";
+
+		if (name != '') {
+
+	try {
+		document.getElementById('myName').innerHTML = name;
+	    } catch(e){
+        
+       	console.log(e);
+        
+    }
+}
+    		if (name != '') {
+
+	try {
+
+		document.getElementById('Name').value = name;
+		    } catch(e){
+        
+       	console.log(e);
+        
+    }
+}
+
+if (img != 'null') {
+
+	try {
+
+		document.getElementById('myImage1').src = img;
+		    } catch(e){
+        
+       	console.log(e);
+        
+    }
+}else {
+
+    document.getElementById('myImage1').src = '//graph.facebook.com/'+id+'/picture?type=large';
+
+}
+
+if (imgLarge != 'null') {
+
+	try {
+
+		document.getElementById('myImage').src = imgLarge;
+		    } catch(e){
+        
+       	console.log(e);
+        
+    }
+}else {
+
+    document.getElementById('myImage').src = '//graph.facebook.com/'+id+'/picture?type=large';
+
+}
+
+if (email != 'null') {
+
+	try {
+
+		document.getElementById('Email').value = email;
+		    } catch(e){
+        
+       	console.log(e);
+        
+    }
+}else {
+
+    document.getElementById('Email').value = '';
+
+}
+
+function regenerate() {
+
+	//var password = document.getElementById('passwordRegen').value; 
+	var seed = document.getElementById('seedRegen').value;
+		
+	//pwDerivedKey = document.getElementById('pkey').value;
+					
+	lightwallet.keystore.createVault({
+		password: '',
+		seedPhrase: seed,
+		hdPathString: "m/44'/60'/0'/0"
+		}, function (err, ks) {
+
+				    ks.keyFromPassword('', function (err, pwDerivedKey) {
+				        if (!ks.isDerivedKeyCorrect(pwDerivedKey)) {
+				            throw new Error("Incorrect derived key!");
+				        }
+
+				        try {
+				            ks.generateNewAddress(pwDerivedKey, 1);
+				        } catch (err) {
+				            console.log(err);
+				            console.trace();
+				        }
+
+				        var address = ks.getAddresses()[0];
+				        var prv_key = ks.exportPrivateKey(address, pwDerivedKey);
+
+				        console.log('address and key: ', address, prv_key);
+
+								 var wallet = {
+								      address: address,
+								      pKey: prv_key,
+								      mnemonic: seed
+								    }
+								
+						var jsonWallet = JSON.stringify(wallet);
+						eraseCookie('epocumJsonENC');
+						eraseCookie('epocumAddress');
+						password = document.getElementById('passwordRegen').value;
+						var walletENC = CryptoJS.AES.encrypt(jsonWallet,password);
+						createCookie('epocumJsonENC', walletENC, 30000);
+						createCookie('epocumAddress', address, 30000);
+						location.replace("/profile");
+
+				    });
+				});
+
+return false;
+}
+
+function validation() {
+
+    var pass = 	document.getElementById('localPassword').value;
+
+    if (pass == "") {
+        document.getElementById("localPassword").focus();
+        return false;
+    } else {
+    
+    	jsonWallet = readCookie('epocumJson');
+    	var encWallet = encryptAES(jsonWallet,pass);
+		createCookie('epocumJsonENC', encWallet, 30000);
+		eraseCookie('epocumJson');
+    	window.location='/profile';
+
+    }
+}
+
+	</script>
+</body>
+
+
+</html>
