@@ -22,8 +22,8 @@ passport.deserializeUser(function(obj, done) {
 
 
 passport.use(new TwitterStrategy({
-    consumerKey: '7LTLxkpka3zV4HS8Bi8u7FBGt',
-    consumerSecret: 'IvhcUaunLfR7ZfAEqJ6JYRGxf9HkIIoQqnZHTtC9KzVH2xD9Jo',
+    consumerKey: '',
+    consumerSecret: '',
     callbackURL: "https://www.epocum.com/auth/twitter/callback",
     includeEmail: true,
    },
@@ -47,8 +47,8 @@ passport.use(new TwitterStrategy({
 //twitter
 
 passport.use(new FacebookStrategy({
-    clientID: '506526716375279',
-    clientSecret:'f5b60d7ac285e6e9fde419aa870df67b' ,
+    clientID: '',
+    clientSecret:'' ,
     callbackURL: 'https://www.epocum.com/auth/facebook/callback',
     profileFields: ['id', 'emails', 'name', 'displayName']
 
